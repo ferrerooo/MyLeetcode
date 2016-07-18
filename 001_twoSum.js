@@ -12,3 +12,16 @@ var twoSum = function(nums, target) {
     }
     return [];
 };
+
+/**
+Map is a better solution
+ */
+var twoSum = function(nums, target) {
+    var dict = new Map();
+    for (var i=0; i<nums.length; i++) {
+        if (dict.has(target-nums[i]))
+            return [dict.get(target - nums[i]), i];
+        dict.set(nums[i], i);
+    }
+    return [];
+};
